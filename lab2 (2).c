@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+//eu campion tu cam pion
+
 int function(int x, int *p){
 	(*p)++;
 	x=x-2;
