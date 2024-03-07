@@ -1,20 +1,20 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int function(int x){
+int function(int x, int *p){
+	(*p)++;
 	x=x-2;
-	x=function(x);
-	return x;
+	if(x<0)
+    return x;
+	x=function(x,&(*p));
 }
 
 int main(){
 	int a=30, i=0;
-	
-	while (a>0){
-		a=function(a);
-		i++;
-	}
+
+    a=function(a,&i);
+
 	printf("%d", i);
-	return 0;	
+	return 0;
 }
 
